@@ -249,8 +249,8 @@ def compile_model(compressed_vectors):
     print(selected_frames)
     print('\n')
 
-    ## Asses
-    print('Assesing the quality of the model...')
+    ## Assess
+    print('Assessing the quality of the model...')
     print('\tSilhouette score (1 is best, 0 is random): ', end =" ")
     print(metrics.silhouette_score(compressed_vectors, labels, metric='euclidean'))
 
@@ -294,6 +294,6 @@ print('\n------------------------------------------------\n')
 ## DO ML
 sorted_labels = compile_model(compressed_vectors)
 
-print('\n\t\tC O M P E T E')
+print('\n\t\tC O M P L E T E')
 
 print('\n------------------------------------------------\n')
