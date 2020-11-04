@@ -6,7 +6,7 @@ A program designed to select poses produced by molecular dynamics (MD) simulatio
 
 This program is still in development, and we're still working hard to improve it. Right now it works well for simple systems, in particular enzymes with a single active site or with multiple active sites that preform the same function. Work is still being done to evaluate preformance on more complex systems.
 
-## Useage
+## Usage
 
 Run this like a python script in a terminal window and follow the prompts. **You will need:**
 * A folder containing trajectory files
