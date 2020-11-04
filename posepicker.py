@@ -215,7 +215,7 @@ def compile_model(compressed_vectors):
     print('\t\tSuccess!')
 
     ## Label
-    print('Labelling frames...', end =" ")
+    print('Labeling frames...', end =" ")
     labels = model.labels_
 
     i = 0
@@ -227,8 +227,8 @@ def compile_model(compressed_vectors):
             j = j+1
 
     print('\t\tSuccess!')
-    print('\tGroup labelled 0: '+str(i))
-    print('\tGroup labelled 1: '+str(j))
+    print('\tGroup labeled 0: '+str(i))
+    print('\tGroup labeled 1: '+str(j))
 
     # Select and print the smaller group of frames
     print('Selecting frames...', end =" ")
