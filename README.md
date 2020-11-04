@@ -2,6 +2,8 @@
 
 A program designed to select poses produced by molecular dynamics (MD) simulations. This project takes advantage of the [MDTraj library](https://github.com/mdtraj/mdtraj) to analyze a wide range of outputs from different MD software, and [SciKitLearn's](https://github.com/mdtraj/mdtraj) **[Agglomerative Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)** packages for machine learning.
 
+### Requires Python 3.7.3
+
 ## Scope
 
 This program is still in development, and we're still working hard to improve it. Right now it works well for simple systems, in particular enzymes with a single active site or with multiple active sites that preform the same function. Work is still being done to evaluate preformance on more complex systems.
