@@ -68,7 +68,7 @@ def get_trajectory(atom_types_input, trajectory_input_folder, first_frame_pdb):
     # Input: MDTraj Trajectory & Topology, name of the substrate, and atom type array
     # Output: Array of pair displacements
     # Notes: Cleans the data for ML. Attempts to narrow down as much as possible
-def get_pair_displacements(trajectory, topology, substrate_name, atom_types):
+def get_pair_displacements(trajectory, topology, substrate_name, substrate_number, atom_types):
     ## IDENTIFY ATOMS
     # Substrate filter
     print('Finding \'interesting\' atoms...')
@@ -76,7 +76,7 @@ def get_pair_displacements(trajectory, topology, substrate_name, atom_types):
     print('\t[2]: Not part of the backbone')
     print('\t[3]: Not in water (HOH)')
     print('\t[4]: Are on the list of atom types')
-    substrate = [atom.index for atom in topology.atoms if (atom.residue.name == substrate_name)]
+    substrate = [atom.index for atom in topology.atoms if (atom.residue.name == substrate_name and atom.residue.index == substrate_number)]
     
     # Atoms of interest filter - atom type in list and not part of the backbone
     interesting_atoms = [atom.index for atom in topology.atoms if (atom.name in atom_types and atom.residue.name != substrate_name and not atom.is_backbone and atom.residue.name != 'HOH')]
@@ -267,6 +267,7 @@ trajectory_input_folder = input('Path to the folder containing trajectory files 
 atom_types_input = input('Path to a file containing atom types of interest:\n')
 first_frame_pdb = input('Path to a PDB file for the first frame:\n')
 substrate_name = input('Substrate name:\n')
+substrate_number = input('Substrate number (or index, or id):\n')
 
 if trajectory_input_folder and atom_types_input and first_frame_pdb != None:
     print('\t\t\t\t\tSuccess!')
@@ -284,7 +285,7 @@ trajectory = input_data[1]
 topology = input_data[2]
 
 # Get distances
-pair_displacement = get_pair_displacements(trajectory, topology, substrate_name, atom_types)
+pair_displacement = get_pair_displacements(trajectory, topology, substrate_name, substrate_number, atom_types)
 
 # Compress vectors
 compressed_vectors = compress_displacements(pair_displacement)
