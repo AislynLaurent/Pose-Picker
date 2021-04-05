@@ -1,5 +1,7 @@
 # Pose-Picker
 
+[![DOI](https://zenodo.org/badge/306729907.svg)](https://zenodo.org/badge/latestdoi/306729907)
+
 A program designed to select poses produced by molecular dynamics (MD) simulations. This project takes advantage of the [MDTraj library](https://github.com/mdtraj/mdtraj) to analyze a wide range of outputs from different MD software, and [SciKitLearn's](https://github.com/mdtraj/mdtraj) **[Agglomerative Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)** packages for machine learning.
 
 ### Requires Python 3.7.3
